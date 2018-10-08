@@ -60,7 +60,7 @@ namespace dachs
             //    Console.WriteLine(street);
             //}
 
-            foreach (string street in GetAllNumbers("Baalsdorfer Anger"))
+            foreach (string street in GetAllNumbers("baalsdorfer+anger"))
             {
                 Console.WriteLine(street);
             }
