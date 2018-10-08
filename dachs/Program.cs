@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.Specialized;
-using System.Net;
+using System.Net.Http;
 
 namespace dachs
 {
@@ -40,6 +39,11 @@ namespace dachs
         /// Straßenname.
         /// </summary>
         static string txtStreet = "";
+
+        /// <summary>
+        /// Http Client.
+        /// </summary>
+        private static readonly HttpClient client = new HttpClient();
         #endregion
 
         string cookie = "wt_cdbeid=1; wt3_sid=%3B498716889887543; wt_geid=815296688990039019590195; wt_rla=498716889887543%2C4%2C1538654274799; wt3_eid=%3B498716889887543%7C2152966889852904860%232153865497300881676";
@@ -51,7 +55,12 @@ namespace dachs
         static void Main(string[] args)
         {
 
-            foreach (string street in GetAllStreets())
+            //foreach (string street in GetAllStreets())
+            //{
+            //    Console.WriteLine(street);
+            //}
+
+            foreach (string street in GetAllNumbers("Baalsdorfer Anger"))
             {
                 Console.WriteLine(street);
             }
@@ -64,11 +73,11 @@ namespace dachs
         {
             try
             {
-                string response = Post(_URL, new NameValueCollection() {
+                string response = Post(_URL, new Dictionary<string, string>() {
                     { nameof(__EVENTVADILATION), __EVENTVADILATION },
                     { nameof(__VIEWSTAT), __VIEWSTAT },
                     { nameof(__VIEWSTATEGENERATOR), __VIEWSTATEGENERATOR },
-                    { nameof(btnFindStreet), btnFindStreet },
+                    { nameof(btnFindStreet), "Neue+suche" },
                     { nameof(txtHnr), string.Empty },
                     { nameof(txtStreet), string.Empty }
                 });
@@ -96,14 +105,20 @@ namespace dachs
         {
             try
             {
-                string response = Post(_URL, new NameValueCollection() {
-                    { nameof(__EVENTVADILATION), __EVENTVADILATION },
+                string response = Post(_URL, new Dictionary<string, string>() {
+                    { nameof(__EVENTVADILATION), "%2FwEdAARdKZaR1MHBfiBGG7nPKl%2FuDlSBEqzYFlt%2BcOr2YiDfOlyVpOm4%2BiOnL8lQyfdNrJtLXopOGbu3LzPW1UTL9bhKDzuFnnx9kXN4S8rn0jCr7ooujlqRGjZ9XtzsI%2BJVL4M%3D" },
                     { nameof(__VIEWSTAT), __VIEWSTAT },
                     { nameof(__VIEWSTATEGENERATOR), __VIEWSTATEGENERATOR },
                     { nameof(btnFindStreet), btnFindStreet },
-                    { nameof(txtHnr), txtHnr },
-                    { nameof(txtStreet), txtStreet }
+                    { nameof(txtHnr), string.Empty },
+                    { nameof(txtStreet), street }
                 });
+
+                List<string> result = new List<string>();
+
+
+
+                return result;
             }
             catch
             {
@@ -119,14 +134,13 @@ namespace dachs
         /// <param name="uri">URL.</param>
         /// <param name="pairs">Parameter.</param>
         /// <returns>Webseite als String.</returns>
-        public static string Post(string uri, NameValueCollection pairs)
+        public static string Post(string uri, Dictionary<string, string> values)
         {
-            byte[] response = null;
-            using (WebClient client = new WebClient())
-            {
-                response = client.UploadValues(uri, pairs);
-            }
-            return System.Text.Encoding.Default.GetString(response); ;
+            FormUrlEncodedContent content = new FormUrlEncodedContent(values);
+
+            HttpResponseMessage response = client.PostAsync(uri, content).Result;
+
+            return response.Content.ReadAsStringAsync().Result;
         }
         
     }
