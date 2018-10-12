@@ -1,4 +1,5 @@
-﻿using System;
+﻿using System.Collections.Generic;
+
 namespace dachs.Interfaces
 {
     /// <summary>
@@ -6,6 +7,6 @@ namespace dachs.Interfaces
     /// </summary>
     public interface IFileGenerator
     {
-        void Generate();
+        void Generate(IEnumerable<string> content);
     }
 }
