@@ -1,4 +1,7 @@
-﻿using dachs.Interfaces;
+﻿using System.Collections.Generic;
+using System.IO;
+using System.Text;
+using dachs.Interfaces;
 
 namespace dachs.Generators
 {
@@ -8,7 +11,7 @@ namespace dachs.Generators
     public class CsvGenerator : IFileGenerator
     {
         #region Fields
-
+        private readonly string _Path;
         #endregion
 
         #region Properties
@@ -19,7 +22,11 @@ namespace dachs.Generators
         /// <summary>
         /// Basis-Konstruktor
         /// </summary>
-        public CsvGenerator() { }
+        public CsvGenerator(string path) 
+        {
+            _Path = path;
+        }
+
         #endregion
 
         #region Public Methods
@@ -31,10 +38,20 @@ namespace dachs.Generators
         #endregion
 
         #region IFileGenerators
-
-        void IFileGenerator.Generate()
+        /// <summary>
+        /// Dachs.s the interfaces. IFile generator. generate.
+        /// </summary>
+        /// <param name="content">Content.</param>
+        void IFileGenerator.Generate(IEnumerable<string> content)
         {
-            throw new System.NotImplementedException();
+            StringBuilder csv = new StringBuilder();
+
+            foreach(string line in content)
+            {
+                csv.AppendLine(line);
+            }
+
+            File.WriteAllText(_Path, csv.ToString());
         }
         #endregion
 
