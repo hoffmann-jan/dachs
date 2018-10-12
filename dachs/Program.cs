@@ -8,13 +8,6 @@ namespace dachs
     /// </summary>
     class Program
     {
-        #region Fields
-        /// <summary>
-        /// URL zur Webseite.
-        /// </summary>
-        const string _URL = "https://adressen.leipzig.de/";
-        #endregion
-
         /// <summary>
         /// Haupteinstiegspunkt.
         /// </summary>
@@ -25,13 +18,17 @@ namespace dachs
 
             var er = extractor.Extract("baalsdorfer anger");
 
-            foreach(var r in er )
+            foreach (var r in er)
             {
                 Console.WriteLine(r);
             }
 
-            Console.Write("\n\npress any key to quit..\n");
-            Console.ReadKey();
+            if (System.Environment.OSVersion.Platform != PlatformID.Unix)
+            {
+                Console.Write("\n\npress any key to quit..\n");
+                Console.ReadKey();
+            }
+
         }
 
     }
