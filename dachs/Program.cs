@@ -23,7 +23,7 @@ namespace dachs
         {
             IExtractor extractor = new Extractor();
 
-            var er = extractor.Extract("baalsdorfer+anger");
+            var er = extractor.Extract("baalsdorfer anger");
 
             foreach(var r in er )
             {

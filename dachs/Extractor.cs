@@ -67,13 +67,10 @@ namespace dachs
         /// Gets a value indicating whether this <see cref="T:dachs.Extractor"/> has error.
         /// </summary>
         /// <value><c>true</c> if has error; otherwise, <c>false</c>.</value>
-        public bool HasError 
-        { 
-            get => _HasError; 
-            private set 
-            {
-                _HasError = value;
-            }
+        public bool HasError
+        {
+            get => _HasError;
+            private set => _HasError = value;
         }
         /// <summary>
         /// Gets the exception.
@@ -183,22 +180,17 @@ namespace dachs
 
                 List<string> result = new List<string>();
 
-                HtmlNode node;
                 HtmlDocument doc = new HtmlDocument();
                 doc.Load(response);
 
-                foreach (var ar in doc.DocumentNode.ChildNodes)
+                if (TryGetMatchResult("(option value)([=\\\" >])+([\\d]+)", doc.Text, out MatchCollection matches))
                 {
-                    Console.WriteLine(ar.Name);
-                    foreach ( var arr in ar.ChildNodes)
+                    foreach (Match match in matches)
                     {
-                        Console.WriteLine($"-- {arr.Name}");
+                        result.Add(match.Groups[3].Value);
                     }
                 }
 
-                var res = doc.DocumentNode.ChildNodes.FirstOrDefault(xmlNode => xmlNode.OriginalName.Equals("select"));
-                node = doc.GetElementbyId("select");
-                __VIEWSTATE = node.GetAttributeValue("value", string.Empty);
 
                 return result;
             }
@@ -262,16 +254,15 @@ namespace dachs
         /// <returns><c>true</c>, if get match result was tryed, <c>false</c> otherwise.</returns>
         /// <param name="pattern">Pattern.</param>
         /// <param name="input">Input.</param>
-        /// <param name="match">Match.</param>
-        private bool TryGetMatchResult(string pattern, string input, out string match)
+        /// <param name="matches">Match.</param>
+        private bool TryGetMatchResult(string pattern, string input, out MatchCollection matches)
         {
             Regex regex = new Regex(pattern);
-            match = string.Empty;
+            matches = null;
 
             if (regex.IsMatch(input))
             {
-                var result = regex.Match(input);
-                match = result.Groups[1].Value;
+                matches = regex.Matches(input);
                 return true;
             }
 
