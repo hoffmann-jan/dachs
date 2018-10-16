@@ -11,7 +11,8 @@ namespace dachs.Generators
     public class CsvGenerator : IFileGenerator
     {
         #region Fields
-        private readonly string _Path;
+        private string _Path;
+        private string _StreetName;
         #endregion
 
         #region Properties
@@ -22,9 +23,10 @@ namespace dachs.Generators
         /// <summary>
         /// Basis-Konstruktor
         /// </summary>
-        public CsvGenerator(string path) 
+        public CsvGenerator(string path, string streetName)
         {
             _Path = path;
+            _StreetName = streetName;
         }
 
         #endregion
@@ -51,7 +53,7 @@ namespace dachs.Generators
                 csv.AppendLine(line);
             }
 
-            File.WriteAllText(_Path, csv.ToString());
+            File.WriteAllText(Path.Combine(_Path, string.Concat(_StreetName.Replace(' ', '_'), ".csv")), csv.ToString());
         }
         #endregion
 

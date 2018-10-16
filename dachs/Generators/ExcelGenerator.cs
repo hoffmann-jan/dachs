@@ -1,6 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
+
 using dachs.Interfaces;
+
 using OfficeOpenXml;
 
 namespace dachs.Generators
@@ -79,7 +82,7 @@ namespace dachs.Generators
                 index++;
             }
 
-            using (Stream stream = new FileStream(_Path, FileMode.Create))
+            using (Stream stream = new FileStream(Path.Combine(_Path, string.Concat(_StreetName.Replace(' ', '_'), ".xlsx")), FileMode.Create))
             {
                 package.SaveAs(stream);
             }
