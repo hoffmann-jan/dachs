@@ -14,5 +14,11 @@ namespace dachs.Interfaces
         /// <returns>The extract.</returns>
         /// <param name="streetOfLe">Street of le.</param>
         IEnumerable<string> Extract(string streetOfLe);
+
+        /// <summary>
+        /// Extract all streets of Le.
+        /// </summary>
+        /// <returns>The extract.</returns>
+        IEnumerable<string> ExtractAllStreets();        
     }
 }
