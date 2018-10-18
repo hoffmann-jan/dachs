@@ -35,11 +35,70 @@ namespace dachs.Generators
         #endregion
 
         #region Public Methods
+        /// <summary>
+        /// Generate the Street of Le Excel File.
+        /// </summary>
+        /// <param name="streetsOfLe">pairs</param>
+        public void GenerateStreetsOfLe(Dictionary<string, IEnumerable<string>> streetsOfLe)
+        {
+            ExcelPackage package = new ExcelPackage();
 
+            package.Workbook.Properties.Title = "Street of Le";
+            package.Workbook.Properties.Author = "dachs";
+            package.Workbook.Properties.Subject = "All Straßen von Leipzig.";
+            package.Workbook.Properties.Keywords = "Leipzig,Straßenname,Hausnummern";
+
+
+            var worksheet = package.Workbook.Worksheets.Add(_StreetName);
+
+            //First add the headers
+            worksheet.Cells[1, 1].Value = "Straßenname";
+            worksheet.Cells[1, 2].Value = "Hausnummer";
+
+            int row = 2;
+
+
+            foreach (KeyValuePair<string, IEnumerable<string>> keyValuePair in streetsOfLe)
+            {
+                bool first = true;
+                int col = 1;
+
+                foreach (string num in keyValuePair.Value)
+                {
+                    if (first)
+                    {
+                        worksheet.Cells[row, col++].Value = keyValuePair.Key;
+                        worksheet.Cells[row, col++].Value = num;
+                        first = false;
+                    }
+                    else
+                    {
+                        worksheet.Cells[row, col++].Value = num;
+                    }
+
+                }
+
+                row++;
+
+            }
+
+            SaveToFile(package, nameof(streetsOfLe));
+        }
         #endregion
 
         #region Private Methods
-
+        /// <summary>
+        /// Save the excel package to file on disk.
+        /// </summary>
+        /// <param name="package">Excel</param>
+        /// <param name="fileName">Name</param>
+        private void SaveToFile(ExcelPackage package, string fileName)
+        {
+            using (Stream stream = new FileStream(Path.Combine(_Path, string.Concat(fileName.Replace(' ', '_'), ".xlsx")), FileMode.Create))
+            {
+                package.SaveAs(stream);
+            }
+        }
         #endregion
 
         #region IFileGenerator
@@ -82,10 +141,7 @@ namespace dachs.Generators
                 index++;
             }
 
-            using (Stream stream = new FileStream(Path.Combine(_Path, string.Concat(_StreetName.Replace(' ', '_'), ".xlsx")), FileMode.Create))
-            {
-                package.SaveAs(stream);
-            }
+            SaveToFile(package, _StreetName);
         }
 
         #endregion
