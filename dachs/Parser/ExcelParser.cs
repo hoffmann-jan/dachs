@@ -1,11 +1,13 @@
 ﻿using System;
 
+using dachs.Interfaces;
+
 namespace dachs
 {
     /// <summary>
     /// Excel parser.
     /// </summary>
-    public class ExcelParser
+    public class ExcelParser : IParse
     {
         #region Fields
 
@@ -20,10 +22,19 @@ namespace dachs
         /// Basis-Konstruktor
         /// </summary>
         public ExcelParser() { }
+
         #endregion
 
         #region Public Methods
-
+        /// <summary>
+        /// Parse Excel.
+        /// </summary>
+        /// <param name="path">Path to file.</param>
+        /// <returns>Excel object as object.</returns>
+        object IParse.Parse(string path)
+        {
+            throw new NotImplementedException();
+        }
         #endregion
 
         #region Private Methods
