@@ -202,8 +202,11 @@ namespace dachs
             return null;
         }
 
-
-        private IEnumerable<string> GetAllStreets()
+        /// <summary>
+        /// Get all available streets of Le.
+        /// </summary>
+        /// <returns>All available streets.</returns>
+        public IEnumerable<string> ExtractAllStreets()
         {
             try
             {
@@ -218,13 +221,59 @@ namespace dachs
 
                 List<string> result = new List<string>();
 
+                HtmlDocument doc = new HtmlDocument();
+                doc.Load(response);
 
+                if (TryGetMatchResult("(option value)([=\" \\d]+)>([\\w #\\-&;.]+)<", doc.Text, out MatchCollection matches))
+                {
+                    string value;
+                    foreach (Match match in matches)
+                    {
+                        value = match.Groups[3].Value;
+
+                        while (value.Contains('&'))
+                        {
+                            int pos = value.IndexOf('&');
+                            string charValue = value.Substring(pos + 2, 3);
+                            value = value.Remove(pos, 6);
+
+                            int charNum = int.Parse(charValue);
+
+                            switch (charNum)
+                            {
+                                case 228:
+                                    value = value.Insert(pos, "ä");
+                                    break;
+                                case 196:
+                                    value = value.Insert(pos, "Ä");
+                                    break;
+                                case 214:
+                                    value = value.Insert(pos, "Ö");
+                                    break;
+                                case 246:
+                                    value = value.Insert(pos, "ö");
+                                    break;
+                                case 223:
+                                    value = value.Insert(pos, "ß");
+                                    break;
+                                case 220:
+                                    value = value.Insert(pos, "Ü");
+                                    break;
+                                case 252:
+                                    value = value.Insert(pos, "ü");
+                                    break;
+                            }
+                        }
+
+                        result.Add(value);
+                    }
+                }
 
                 return result;
             }
-            catch
+            catch (Exception e)
             {
-
+                Console.WriteLine(e.Message);
             }
 
             return null;
