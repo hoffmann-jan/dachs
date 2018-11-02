@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.IO;
-
-using dachs.Generators;
-using dachs.Interfaces;
+using dachsXll;
+using dachsXll.Interfaces;
 
 namespace dachs
 {    
@@ -34,7 +30,7 @@ namespace dachs
         {
             IExtractor extractor = new Extractor();
 
-            string testInput = "Am Zipfel";
+            string testInput = "Talstraße";
 
             var er = extractor.Extract(testInput);
             bool first = true;
@@ -51,56 +47,56 @@ namespace dachs
                     Console.Write(string.Concat(",",r));
             }
 
-            Console.WriteLine();
+            //Console.WriteLine();
 
-            Console.WriteLine("Exporting excel file.");
-            IFileGenerator generator = new ExcelGenerator(Directory.GetCurrentDirectory(), testInput);
-            generator.Generate(er);
-            Console.WriteLine("done!");
+            //Console.WriteLine("Exporting excel file.");
+            //IFileGenerator generator = new ExcelGenerator(Directory.GetCurrentDirectory(), testInput);
+            //generator.Generate(er);
+            //Console.WriteLine("done!");
 
-            Console.WriteLine("Exporting csv file.");
-            IFileGenerator csvGenerator = new CsvGenerator(Directory.GetCurrentDirectory(), testInput);
-            csvGenerator.Generate(er);
-            Console.WriteLine("done!");
+            //Console.WriteLine("Exporting csv file.");
+            //IFileGenerator csvGenerator = new CsvGenerator(Directory.GetCurrentDirectory(), testInput);
+            //csvGenerator.Generate(er);
+            //Console.WriteLine("done!");
 
-            Console.WriteLine("Get all available streets of le:");
-            IEnumerable<string> streets = extractor.ExtractAllStreets();
-            int count = 0;
+            //Console.WriteLine("Get all available streets of le:");
+            //IEnumerable<string> streets = extractor.ExtractAllStreets();
+            //int count = 0;
 
-            foreach(string street in streets)
-            {
-                Console.WriteLine(street);
-                count++;
-            }
-            Console.WriteLine($"count:{count}");
-            Console.WriteLine("done!");
-
-
-            Console.WriteLine("Get AAAAALLLLLLLLL!");
-            Console.WriteLine("Stopwatch starting.");
-            Stopwatch stopwatch = Stopwatch.StartNew();
-            Dictionary<string, IEnumerable<string>> streetsOfLe = new Dictionary<string, IEnumerable<string>>();
+            //foreach(string street in streets)
+            //{
+            //    Console.WriteLine(street);
+            //    count++;
+            //}
+            //Console.WriteLine($"count:{count}");
+            //Console.WriteLine("done!");
 
 
+            //Console.WriteLine("Get AAAAALLLLLLLLL!");
+            //Console.WriteLine("Stopwatch starting.");
+            //Stopwatch stopwatch = Stopwatch.StartNew();
+            //Dictionary<string, IEnumerable<string>> streetsOfLe = new Dictionary<string, IEnumerable<string>>();
 
-            int zCount = 0;
-            foreach (string name in streets)
-            {
-                var extract = extractor.Extract(name);
-                streetsOfLe.Add(name, extract);
 
-                foreach (var v in extract)
-                    TotalNumbers++;
 
-                //if (zCount ) fortschrittsbalken einfügen
+            //int zCount = 0;
+            //foreach (string name in streets)
+            //{
+            //    var extract = extractor.Extract(name);
+            //    streetsOfLe.Add(name, extract);
 
-                zCount++;
-            }
+            //    foreach (var v in extract)
+            //        TotalNumbers++;
 
-            stopwatch.Stop();
-            Console.WriteLine($"done in {stopwatch.Elapsed.ToString("h'h 'm'm 's's'")}!");
-            Console.WriteLine($"total streets {count}.");
-            Console.WriteLine($"total numbers: {TotalNumbers}.");
+            //    //if (zCount ) fortschrittsbalken einfügen
+
+            //    zCount++;
+            //}
+
+            //stopwatch.Stop();
+            //Console.WriteLine($"done in {stopwatch.Elapsed.ToString("h'h 'm'm 's's'")}!");
+            //Console.WriteLine($"total streets {count}.");
+            //Console.WriteLine($"total numbers: {TotalNumbers}.");
 
 
             if (Environment.OSVersion.Platform != PlatformID.Unix)

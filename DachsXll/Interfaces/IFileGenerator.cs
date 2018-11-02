@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace dachs.Interfaces
+namespace dachsXll.Interfaces
 {
     /// <summary>
     /// File generator contract.

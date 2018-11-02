@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace dachs.Interfaces
+namespace dachsXll.Interfaces
 {
     /// <summary>
     /// Extractor.

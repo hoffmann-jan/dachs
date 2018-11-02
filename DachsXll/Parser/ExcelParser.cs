@@ -1,8 +1,8 @@
 ﻿using System;
 
-using dachs.Interfaces;
+using dachsXll.Interfaces;
 
-namespace dachs
+namespace dachsXll
 {
     /// <summary>
     /// Excel parser.

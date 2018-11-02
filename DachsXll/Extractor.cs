@@ -6,10 +6,10 @@ using System.Net.Http;
 using System.Text.RegularExpressions;
 using System.Xml.Linq;
 
-using dachs.Interfaces;
+using dachsXll.Interfaces;
 using HtmlAgilityPack;
 
-namespace dachs
+namespace dachsXll
 {
     /// <summary>
     /// Extractor.

@@ -1,4 +1,4 @@
-﻿namespace dachs.Interfaces
+﻿namespace dachsXll.Interfaces
 {
     /// <summary>
     /// I can parse Excel or CSV.
