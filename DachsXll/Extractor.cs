@@ -4,7 +4,6 @@ using System.IO;
 using System.Linq;
 using System.Net.Http;
 using System.Text.RegularExpressions;
-using System.Xml.Linq;
 
 using dachsXll.Interfaces;
 using HtmlAgilityPack;
@@ -21,6 +20,11 @@ namespace dachsXll
         /// The URL.
         /// </summary>
         private string _Url = @"https://adressen.leipzig.de";
+        
+        /// <summary>
+        /// Pattern
+        /// </summary>
+        private const string _PatternOptionsValues = "(option value)([=\\\" >])+([\\d]+\\w*)";
 
         /// <summary>
         /// Parameter für die Abfrage.
@@ -129,25 +133,36 @@ namespace dachsXll
         /// <summary>
         /// Tries the set variables.
         /// </summary>
+        /// <param name="htmlDocument">HTML-Document</param>
         /// <returns><c>true</c>, if set variables was tryed, <c>false</c> otherwise.</returns>
-        private bool TrySetVariables()
+        private bool TrySetVariables(HtmlDocument htmlDocument)
         {
             try
             {
-                Stream httpResult = client.GetStreamAsync(_Url).Result;
+                HtmlDocument doc;
+                HtmlNode node;
 
-                HtmlNode node;                
-                HtmlDocument doc = new HtmlDocument();
-                doc.Load(httpResult);
+                if (htmlDocument == null)
+                {
+                    Stream httpResult = client.GetStreamAsync(_Url).Result;
+                    doc = new HtmlDocument();
+                    doc.Load(httpResult);
+
+                    node = doc.GetElementbyId("btnFindStreet");
+                    btnFindStreet = node.GetAttributeValue("value", string.Empty);
+                    ReplaceSpaceChar(ref btnFindStreet);
+                }
+                else
+                {
+                    doc = htmlDocument;
+                }
+
                 node = doc.GetElementbyId("__VIEWSTATE");
                 __VIEWSTATE = node.GetAttributeValue("value", string.Empty);
                 node = doc.GetElementbyId("__VIEWSTATEGENERATOR");
                 __VIEWSTATEGENERATOR = node.GetAttributeValue("value", string.Empty);
                 node = doc.GetElementbyId("__EVENTVALIDATION");
                 __EVENTVALIDATION = node.GetAttributeValue("value", string.Empty);
-                node = doc.GetElementbyId("btnFindStreet");
-                btnFindStreet = node.GetAttributeValue("value", string.Empty);
-                ReplaceSpaceChar(ref btnFindStreet);
 
                 txtHnr = string.Empty;
                 txtStreet = string.Empty;
@@ -159,6 +174,15 @@ namespace dachsXll
                 return false;
             }
             return true;
+        }
+
+        /// <summary>
+        /// Tries the set variables.
+        /// </summary>
+        /// <returns><c>true</c>, if set variables was tryed, <c>false</c> otherwise.</returns>
+        private bool TrySetVariables()
+        {
+            return TrySetVariables(null);
         }
 
         /// <summary>
@@ -183,7 +207,9 @@ namespace dachsXll
                 HtmlDocument doc = new HtmlDocument();
                 doc.Load(response);
 
-                if (TryGetMatchResult("(option value)([=\\\" >])+([\\d]+)", doc.Text, out MatchCollection matches))
+                VadilateResponse(ref doc);                
+
+                if (TryGetMatchResult(_PatternOptionsValues, doc.Text, out MatchCollection matches))
                 {
                     foreach (Match match in matches)
                     {
@@ -231,39 +257,7 @@ namespace dachsXll
                     {
                         value = match.Groups[3].Value;
 
-                        while (value.Contains('&'))
-                        {
-                            int pos = value.IndexOf('&');
-                            string charValue = value.Substring(pos + 2, 3);
-                            value = value.Remove(pos, 6);
-
-                            int charNum = int.Parse(charValue);
-
-                            switch (charNum)
-                            {
-                                case 228:
-                                    value = value.Insert(pos, "ä");
-                                    break;
-                                case 196:
-                                    value = value.Insert(pos, "Ä");
-                                    break;
-                                case 214:
-                                    value = value.Insert(pos, "Ö");
-                                    break;
-                                case 246:
-                                    value = value.Insert(pos, "ö");
-                                    break;
-                                case 223:
-                                    value = value.Insert(pos, "ß");
-                                    break;
-                                case 220:
-                                    value = value.Insert(pos, "Ü");
-                                    break;
-                                case 252:
-                                    value = value.Insert(pos, "ü");
-                                    break;
-                            }
-                        }
+                        MakeStreetnameHumanReadable(ref value);
 
                         result.Add(value);
                     }
@@ -277,6 +271,47 @@ namespace dachsXll
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Converts html symbols to readable charakters.
+        /// </summary>
+        /// <param name="value">input string with html symbols.</param>
+        private void MakeStreetnameHumanReadable(ref string value)
+        {
+            while (value.Contains('&'))
+            {
+                int pos = value.IndexOf('&');
+                string charValue = value.Substring(pos + 2, 3);
+                value = value.Remove(pos, 6);
+
+                int charNum = int.Parse(charValue);
+
+                switch (charNum)
+                {
+                    case 228:
+                        value = value.Insert(pos, "ä");
+                        break;
+                    case 196:
+                        value = value.Insert(pos, "Ä");
+                        break;
+                    case 214:
+                        value = value.Insert(pos, "Ö");
+                        break;
+                    case 246:
+                        value = value.Insert(pos, "ö");
+                        break;
+                    case 223:
+                        value = value.Insert(pos, "ß");
+                        break;
+                    case 220:
+                        value = value.Insert(pos, "Ü");
+                        break;
+                    case 252:
+                        value = value.Insert(pos, "ü");
+                        break;
+                }
+            }
         }
 
 
@@ -329,5 +364,50 @@ namespace dachsXll
             value = value.Replace(' ', '+');
         }
 
+        /// <summary>
+        /// Vadilates the HTML Response.
+        /// </summary>
+        /// <param name="document"></param>
+        private void VadilateResponse(ref HtmlDocument document)
+        {
+            string htmlResult = document.Text;
+            Regex regexSuccessful = new Regex("(<span id=\"lblStreet\">)");
+            if (regexSuccessful.IsMatch(htmlResult))
+                return;
+
+            // Get the specific HTML-Result-Page
+            if (TryGetMatchResult(string.Concat(_PatternOptionsValues, "(\\W{2})([a-zA-ZäöüßÄÖÜ#&;\\d]+)<"), document.Text, out MatchCollection matches))
+            {
+                foreach (Match match in matches)
+                {
+                    string value = match.Groups[5].Value;
+                    MakeStreetnameHumanReadable(ref value);
+
+                    if (value.Equals(txtStreet))
+                    {
+                        if (TrySetVariables(document))
+                        {
+                            Stream response = Post(_Url, new Dictionary<string, string>() {
+                                { "__EVENTARGUMENT", string.Empty },
+                                { "__EVENTTARGET", "ddlStreet" },
+                                { nameof(__EVENTVALIDATION), __EVENTVALIDATION },
+                                { "__LASTFOCUS", string.Empty },
+                                { nameof(__VIEWSTATE), __VIEWSTATE },
+                                { nameof(__VIEWSTATEGENERATOR), __VIEWSTATEGENERATOR },
+                                { "ddlStreet", match.Groups[3].Value },
+                                { nameof(txtHnr), string.Empty }});
+
+                            document.Load(response);
+                            TrySetVariables();
+                        }
+
+                        break;
+                    }
+                }
+            }
+            
+
+            return;
+        }
     }
 }
