@@ -20,7 +20,7 @@ namespace dachsXll
         /// <param name="streetName">Name of the street.</param>
         /// <returns>available Numbers</returns>
         [ExcelFunction(Description = "Fragt alle offiziellen Hausnummern zu der markierten Leipziger Straße vom offiziellen Server[addressen.leipzig.de] ab.", Name = "Hausnummern Leipzig")]
-        public static string SayHello(string streetName)
+        public static string Housenumbers(string streetName)
         {
             return "Hello " + streetName;
         }
