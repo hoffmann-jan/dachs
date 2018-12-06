@@ -1,6 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 
 using dachsXll.Interfaces;
 
@@ -105,37 +105,59 @@ namespace dachsXll.Generators
         /// <summary>
         /// Dachs.s the interfaces. IFile generator. generate.
         /// </summary>
-        /// <param name="content">Content.</param>
-        void IFileGenerator.Generate(IEnumerable<string> content)
+        /// <param name="streetsNumbers">Key:street;Value:Numbers</param>
+        void IFileGenerator.Generate(Dictionary<string, string> streetsNumbers)
         {
             ExcelPackage package = new ExcelPackage();
 
-            package.Workbook.Properties.Title = "Street of Le";
-            package.Workbook.Properties.Author = "dachs";
-            package.Workbook.Properties.Subject = _StreetName;
-            package.Workbook.Properties.Keywords = "Leipzig,Straßenname,Hausnummern";
+            if (streetsNumbers.Count == 1)
+                _StreetName = streetsNumbers.Keys.First();
+
+            if (Global.Language == Global.Languages.English)
+            {
+                package.Workbook.Properties.Title = "Street of Le";
+                package.Workbook.Properties.Author = "dachs";
+                package.Workbook.Properties.Subject = _StreetName;
+                package.Workbook.Properties.Keywords = "Leipzig,streets,housenumbers";
+            }
+            else if (Global.Language == Global.Languages.German)
+            {
+                package.Workbook.Properties.Title = "Straßen von Leipzig";
+                package.Workbook.Properties.Author = "dachs";
+                package.Workbook.Properties.Subject = _StreetName;
+                package.Workbook.Properties.Keywords = "Leipzig,Straßenname,Hausnummern";
+            }
+
 
 
             var worksheet = package.Workbook.Worksheets.Add(_StreetName);
 
             //First add the headers
-            worksheet.Cells[1, 1].Value = "Straßenname";
-            worksheet.Cells[1, 2].Value = "Hausnummer";
+            if (Global.Language == Global.Languages.English)
+            {
+                worksheet.Cells[1, 1].Value = "street name";
+                worksheet.Cells[1, 2].Value = "house numbers";
+            }
+            else if (Global.Language == Global.Languages.German)
+            {
+                worksheet.Cells[1, 1].Value = "Straßenname";
+                worksheet.Cells[1, 2].Value = "Hausnummern";
+            }
 
             bool first = true;
             int index = 2;
-
-            foreach(string number in content)
+            
+            foreach (KeyValuePair<string, string> keyValuePair in streetsNumbers)
             {
                 if (first)
                 {
-                    worksheet.Cells[index, 1].Value = _StreetName;
-                    worksheet.Cells[index, 2].Value = number;
+                    worksheet.Cells[index, 1].Value = keyValuePair.Key;
+                    worksheet.Cells[index, 2].Value = keyValuePair.Value;
                     first = false;
                 }
                 else
                 {
-                    worksheet.Cells[index, 2].Value = number;
+                    worksheet.Cells[index, 2].Value = keyValuePair.Value;
                 }
 
                 index++;

@@ -4,9 +4,6 @@ using System.Text;
 
 using ExcelDna.Integration;
 
-/// <summary>
-/// dachs as *.xll file for MS Excel.
-/// </summary>
 namespace dachsXll
 {
     /// <summary>

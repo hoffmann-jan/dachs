@@ -1,6 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Text;
+
 using dachsXll.Interfaces;
 
 namespace dachsXll.Generators
@@ -11,7 +13,7 @@ namespace dachsXll.Generators
     public class CsvGenerator : IFileGenerator
     {
         #region Fields
-        private string _Path;
+        private readonly string _Path;
         private string _StreetName;
         #endregion
 
@@ -43,14 +45,18 @@ namespace dachsXll.Generators
         /// <summary>
         /// Dachs.s the interfaces. IFile generator. generate.
         /// </summary>
-        /// <param name="content">Content.</param>
-        void IFileGenerator.Generate(IEnumerable<string> content)
+        /// <param name="streetsNumbers">Key:Street;Value:Numbers</param>
+        void IFileGenerator.Generate(Dictionary<string, string> streetsNumbers)
         {
             StringBuilder csv = new StringBuilder();
 
-            foreach(string line in content)
+            if (streetsNumbers.Count == 1)
+                _StreetName = streetsNumbers.Keys.First();
+
+            foreach (KeyValuePair<string, string> keyValuePair in streetsNumbers)
             {
-                csv.AppendLine(line);
+                csv.Append($"{keyValuePair.Key},");
+                csv.AppendLine($"{keyValuePair.Value}");
             }
 
             File.WriteAllText(Path.Combine(_Path, string.Concat(_StreetName.Replace(' ', '_'), ".csv")), csv.ToString());

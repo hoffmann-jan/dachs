@@ -7,6 +7,10 @@ namespace dachsXll.Interfaces
     /// </summary>
     public interface IFileGenerator
     {
-        void Generate(IEnumerable<string> content);
+        /// <summary>
+        /// Generates a file with given content.
+        /// </summary>
+        /// <param name="streetsNumbers">Key:Street;Value:Numbers</param>
+        void Generate(Dictionary<string, string> streetsNumbers);
     }
 }
