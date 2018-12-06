@@ -1,4 +1,4 @@
-<DnaLibrary Name="dachsXll Add-In" RuntimeVersion="v4.0">
+<DnaLibrary Name="Dachs" RuntimeVersion="v4.0">
   <ExternalLibrary Path="DachsXll.dll" ExplicitExports="false" LoadFromBytes="true" Pack="true" />
   
   <!-- 
