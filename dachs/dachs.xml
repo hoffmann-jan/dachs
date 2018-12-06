@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>dachs</name>
+    </assembly>
+    <members>
+        <member name="T:dachs.Program">
+            <summary>
+            Dachs-Console-Application
+            </summary>
+        </member>
+        <member name="M:dachs.Program.Main(System.String[])">
+            <summary>
+            Haupteinstiegspunkt.
+            </summary>
+            <param name="args"></param>
+        </member>
+    </members>
+</doc>
