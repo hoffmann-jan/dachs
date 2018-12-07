@@ -1,0 +1,121 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="classdachs_xll_1_1_generators_1_1_csv_generator" kind="class" language="C#" prot="public">
+    <compoundname>dachsXll::Generators::CsvGenerator</compoundname>
+    <basecompoundref refid="interfacedachs_xll_1_1_interfaces_1_1_i_file_generator" prot="public" virt="non-virtual">dachsXll.Interfaces.IFileGenerator</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classdachs_xll_1_1_generators_1_1_csv_generator_1ad7bf880aff056ae806b6682dc83bc626" prot="private" static="no" mutable="no">
+        <type>readonly string</type>
+        <definition>readonly string dachsXll.Generators.CsvGenerator._Path</definition>
+        <argsstring></argsstring>
+        <name>_Path</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Git/dachs/dachs/DachsXll/Generators/CsvGenerator.cs" line="16" column="1" bodyfile="D:/Git/dachs/dachs/DachsXll/Generators/CsvGenerator.cs" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classdachs_xll_1_1_generators_1_1_csv_generator_1ad4ce20e88341204b8176c9bd47069e8b" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string dachsXll.Generators.CsvGenerator._StreetName</definition>
+        <argsstring></argsstring>
+        <name>_StreetName</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Git/dachs/dachs/DachsXll/Generators/CsvGenerator.cs" line="17" column="1" bodyfile="D:/Git/dachs/dachs/DachsXll/Generators/CsvGenerator.cs" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classdachs_xll_1_1_generators_1_1_csv_generator_1ad42551d4708c9c80fb0c1bc2dac3d42b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>dachsXll.Generators.CsvGenerator.CsvGenerator</definition>
+        <argsstring>(string path, string streetName)</argsstring>
+        <name>CsvGenerator</name>
+        <param>
+          <type>string</type>
+          <declname>path</declname>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>streetName</declname>
+        </param>
+        <briefdescription>
+<para>Basis-Konstruktor </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Git/dachs/dachs/DachsXll/Generators/CsvGenerator.cs" line="28" column="1" bodyfile="D:/Git/dachs/dachs/DachsXll/Generators/CsvGenerator.cs" bodystart="28" bodyend="32"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classdachs_xll_1_1_generators_1_1_csv_generator_1aa7681151c2618d83bfbe27f2f7a48836" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void IFileGenerator.</type>
+        <definition>void IFileGenerator. dachsXll.Generators.CsvGenerator.Generate</definition>
+        <argsstring>(Dictionary&lt; string, string &gt; streetsNumbers)</argsstring>
+        <name>Generate</name>
+        <reimplements refid="interfacedachs_xll_1_1_interfaces_1_1_i_file_generator_1ae9f57694293f7e385ff797c5ece23156">Generate</reimplements>
+        <param>
+          <type>Dictionary&lt; string, string &gt;</type>
+          <declname>streetsNumbers</declname>
+        </param>
+        <briefdescription>
+<para>Dachs.s the interfaces. IFile generator. generate. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>streetsNumbers</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Key:Street;Value:Numbers</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Git/dachs/dachs/DachsXll/Generators/CsvGenerator.cs" line="49" column="1" bodyfile="D:/Git/dachs/dachs/DachsXll/Generators/CsvGenerator.cs" bodystart="49" bodyend="63"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Csv generator. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="0">
+        <label>dachsXll.Generators.CsvGenerator</label>
+        <link refid="classdachs_xll_1_1_generators_1_1_csv_generator"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>IFileGenerator</label>
+        <link refid="interfacedachs_xll_1_1_interfaces_1_1_i_file_generator"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>dachsXll.Generators.CsvGenerator</label>
+        <link refid="classdachs_xll_1_1_generators_1_1_csv_generator"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>IFileGenerator</label>
+        <link refid="interfacedachs_xll_1_1_interfaces_1_1_i_file_generator"/>
+      </node>
+    </collaborationgraph>
+    <location file="D:/Git/dachs/dachs/DachsXll/Generators/CsvGenerator.cs" line="14" column="1" bodyfile="D:/Git/dachs/dachs/DachsXll/Generators/CsvGenerator.cs" bodystart="13" bodyend="66"/>
+    <listofallmembers>
+      <member refid="classdachs_xll_1_1_generators_1_1_csv_generator_1ad7bf880aff056ae806b6682dc83bc626" prot="private" virt="non-virtual"><scope>dachsXll::Generators::CsvGenerator</scope><name>_Path</name></member>
+      <member refid="classdachs_xll_1_1_generators_1_1_csv_generator_1ad4ce20e88341204b8176c9bd47069e8b" prot="private" virt="non-virtual"><scope>dachsXll::Generators::CsvGenerator</scope><name>_StreetName</name></member>
+      <member refid="classdachs_xll_1_1_generators_1_1_csv_generator_1ad42551d4708c9c80fb0c1bc2dac3d42b" prot="public" virt="non-virtual"><scope>dachsXll::Generators::CsvGenerator</scope><name>CsvGenerator</name></member>
+      <member refid="classdachs_xll_1_1_generators_1_1_csv_generator_1aa7681151c2618d83bfbe27f2f7a48836" prot="private" virt="non-virtual"><scope>dachsXll::Generators::CsvGenerator</scope><name>Generate</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

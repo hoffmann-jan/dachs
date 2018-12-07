@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="namespacedachs_xll" kind="namespace" language="C#">
+    <compoundname>dachsXll</compoundname>
+    <innerclass refid="classdachs_xll_1_1_excel_function" prot="public">dachsXll::ExcelFunction</innerclass>
+    <innerclass refid="classdachs_xll_1_1_excel_parser" prot="public">dachsXll::ExcelParser</innerclass>
+    <innerclass refid="classdachs_xll_1_1_extractor" prot="public">dachsXll::Extractor</innerclass>
+    <innerclass refid="classdachs_xll_1_1_global" prot="public">dachsXll::Global</innerclass>
+    <innernamespace refid="namespacedachs_xll_1_1_generators">dachsXll::Generators</innernamespace>
+    <innernamespace refid="namespacedachs_xll_1_1_interfaces">dachsXll::Interfaces</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/Git/dachs/dachs/DachsXll/ExcelFunction.cs" line="7" column="1"/>
+  </compounddef>
+</doxygen>

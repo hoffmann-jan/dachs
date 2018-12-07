@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="dir_04783ed534614e2224c3a23685c27ea9" kind="dir">
+    <compoundname>D:/Git/dachs/dachs/dachs/obj/Debug</compoundname>
+    <innerdir refid="dir_30f58fd69136ff8b7b07decbfc59b721">D:/Git/dachs/dachs/dachs/obj/Debug/netcoreapp2.1</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/Git/dachs/dachs/dachs/obj/Debug/"/>
+  </compounddef>
+</doxygen>

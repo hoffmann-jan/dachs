@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="namespacedachs_xll_1_1_interfaces" kind="namespace" language="C#">
+    <compoundname>dachsXll::Interfaces</compoundname>
+    <innerclass refid="interfacedachs_xll_1_1_interfaces_1_1_i_extractor" prot="public">dachsXll::Interfaces::IExtractor</innerclass>
+    <innerclass refid="interfacedachs_xll_1_1_interfaces_1_1_i_file_generator" prot="public">dachsXll::Interfaces::IFileGenerator</innerclass>
+    <innerclass refid="interfacedachs_xll_1_1_interfaces_1_1_i_parse" prot="public">dachsXll::Interfaces::IParse</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/Git/dachs/dachs/DachsXll/Interfaces/IExtractor.cs" line="5" column="1"/>
+  </compounddef>
+</doxygen>

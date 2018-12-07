@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="dir_3267e67e189d4267110a8e65725a9343" kind="dir">
+    <compoundname>D:/Git/dachs/dachs/DachsXll/Parser</compoundname>
+    <innerfile refid="_excel_parser_8cs">ExcelParser.cs</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/Git/dachs/dachs/DachsXll/Parser/"/>
+  </compounddef>
+</doxygen>

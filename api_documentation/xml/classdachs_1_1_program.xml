@@ -1,0 +1,201 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="classdachs_1_1_program" kind="class" language="C#" prot="public">
+    <compoundname>dachs::Program</compoundname>
+      <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="classdachs_1_1_program_1adc0d9981bc99df5abc34ec1bc95e806d" prot="private" static="yes" mutable="no">
+        <type>int</type>
+        <definition>int dachs.Program._TotalNumbers</definition>
+        <argsstring></argsstring>
+        <name>_TotalNumbers</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Git/dachs/dachs/dachs/Program.cs" line="19" column="1" bodyfile="D:/Git/dachs/dachs/dachs/Program.cs" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="classdachs_1_1_program_1a9300b0e1fdc84dd7a316309ffd747d3b" prot="public" static="yes" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>int</type>
+        <definition>int dachs.Program.TotalNumbers</definition>
+        <argsstring></argsstring>
+        <name>TotalNumbers</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Git/dachs/dachs/dachs/Program.cs" line="22" column="1" bodyfile="D:/Git/dachs/dachs/dachs/Program.cs" bodystart="23" bodyend="32"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="classdachs_1_1_program_1a3645efa2ea9a86921990db6ed840bdec" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void dachs.Program.Main</definition>
+        <argsstring>(string[] args)</argsstring>
+        <name>Main</name>
+        <param>
+          <type>string []</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+<para>Haupteinstiegspunkt. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>args</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Git/dachs/dachs/dachs/Program.cs" line="39" column="1" bodyfile="D:/Git/dachs/dachs/dachs/Program.cs" bodystart="39" bodyend="56"/>
+      </memberdef>
+      <memberdef kind="function" id="classdachs_1_1_program_1ae9e69dac5b86ac55c7eeee88262ef221" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>static bool dachs.Program.Menu</definition>
+        <argsstring>()</argsstring>
+        <name>Menu</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Git/dachs/dachs/dachs/Program.cs" line="58" column="1" bodyfile="D:/Git/dachs/dachs/dachs/Program.cs" bodystart="58" bodyend="153"/>
+      </memberdef>
+      <memberdef kind="function" id="classdachs_1_1_program_1a2d50b07edeec18d7179cd3f763e8dee9" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>static bool dachs.Program.GetAllNumbersOfAStreet</definition>
+        <argsstring>(bool toExcel=false, bool toCSV=false)</argsstring>
+        <name>GetAllNumbersOfAStreet</name>
+        <param>
+          <type>bool</type>
+          <declname>toExcel</declname>
+          <defval>false</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>toCSV</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Git/dachs/dachs/dachs/Program.cs" line="155" column="1" bodyfile="D:/Git/dachs/dachs/dachs/Program.cs" bodystart="155" bodyend="228"/>
+      </memberdef>
+      <memberdef kind="function" id="classdachs_1_1_program_1ac149ce79161127d7a68471af6f9d1444" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>static bool dachs.Program.GetAll</definition>
+        <argsstring>(bool toExcel)</argsstring>
+        <name>GetAll</name>
+        <param>
+          <type>bool</type>
+          <declname>toExcel</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Git/dachs/dachs/dachs/Program.cs" line="230" column="1" bodyfile="D:/Git/dachs/dachs/dachs/Program.cs" bodystart="230" bodyend="344"/>
+      </memberdef>
+      <memberdef kind="function" id="classdachs_1_1_program_1a0e92e55a0509cc9003a45950dd5c2ed7" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void dachs.Program.ToCSV</definition>
+        <argsstring>(Dictionary&lt; string, string &gt; streetsNumbers)</argsstring>
+        <name>ToCSV</name>
+        <param>
+          <type>Dictionary&lt; string, string &gt;</type>
+          <declname>streetsNumbers</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Git/dachs/dachs/dachs/Program.cs" line="346" column="1" bodyfile="D:/Git/dachs/dachs/dachs/Program.cs" bodystart="346" bodyend="350"/>
+      </memberdef>
+      <memberdef kind="function" id="classdachs_1_1_program_1abadc18eaac74cee847e4f40bc7210ee7" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void dachs.Program.ToExcel</definition>
+        <argsstring>(Dictionary&lt; string, string &gt; streetsNumbers)</argsstring>
+        <name>ToExcel</name>
+        <param>
+          <type>Dictionary&lt; string, string &gt;</type>
+          <declname>streetsNumbers</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Git/dachs/dachs/dachs/Program.cs" line="352" column="1" bodyfile="D:/Git/dachs/dachs/dachs/Program.cs" bodystart="352" bodyend="356"/>
+      </memberdef>
+      <memberdef kind="function" id="classdachs_1_1_program_1a587d405af3e2be74dd63aaac56fc4525" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>string</type>
+        <definition>static string dachs.Program.GetNumbers</definition>
+        <argsstring>(string street)</argsstring>
+        <name>GetNumbers</name>
+        <param>
+          <type>string</type>
+          <declname>street</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Git/dachs/dachs/dachs/Program.cs" line="358" column="1" bodyfile="D:/Git/dachs/dachs/dachs/Program.cs" bodystart="358" bodyend="393"/>
+      </memberdef>
+      <memberdef kind="function" id="classdachs_1_1_program_1acebe78cb3d18704b11e272dff2ed080e" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void dachs.Program.PrintNumbers</definition>
+        <argsstring>(string street)</argsstring>
+        <name>PrintNumbers</name>
+        <param>
+          <type>string</type>
+          <declname>street</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Git/dachs/dachs/dachs/Program.cs" line="395" column="1" bodyfile="D:/Git/dachs/dachs/dachs/Program.cs" bodystart="395" bodyend="429"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Dachs-Console-Application </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/Git/dachs/dachs/dachs/Program.cs" line="17" column="1" bodyfile="D:/Git/dachs/dachs/dachs/Program.cs" bodystart="16" bodyend="430"/>
+    <listofallmembers>
+      <member refid="classdachs_1_1_program_1adc0d9981bc99df5abc34ec1bc95e806d" prot="private" virt="non-virtual"><scope>dachs::Program</scope><name>_TotalNumbers</name></member>
+      <member refid="classdachs_1_1_program_1ac149ce79161127d7a68471af6f9d1444" prot="private" virt="non-virtual"><scope>dachs::Program</scope><name>GetAll</name></member>
+      <member refid="classdachs_1_1_program_1a2d50b07edeec18d7179cd3f763e8dee9" prot="private" virt="non-virtual"><scope>dachs::Program</scope><name>GetAllNumbersOfAStreet</name></member>
+      <member refid="classdachs_1_1_program_1a587d405af3e2be74dd63aaac56fc4525" prot="private" virt="non-virtual"><scope>dachs::Program</scope><name>GetNumbers</name></member>
+      <member refid="classdachs_1_1_program_1a3645efa2ea9a86921990db6ed840bdec" prot="private" virt="non-virtual"><scope>dachs::Program</scope><name>Main</name></member>
+      <member refid="classdachs_1_1_program_1ae9e69dac5b86ac55c7eeee88262ef221" prot="private" virt="non-virtual"><scope>dachs::Program</scope><name>Menu</name></member>
+      <member refid="classdachs_1_1_program_1acebe78cb3d18704b11e272dff2ed080e" prot="private" virt="non-virtual"><scope>dachs::Program</scope><name>PrintNumbers</name></member>
+      <member refid="classdachs_1_1_program_1a0e92e55a0509cc9003a45950dd5c2ed7" prot="private" virt="non-virtual"><scope>dachs::Program</scope><name>ToCSV</name></member>
+      <member refid="classdachs_1_1_program_1abadc18eaac74cee847e4f40bc7210ee7" prot="private" virt="non-virtual"><scope>dachs::Program</scope><name>ToExcel</name></member>
+      <member refid="classdachs_1_1_program_1a9300b0e1fdc84dd7a316309ffd747d3b" prot="public" virt="non-virtual"><scope>dachs::Program</scope><name>TotalNumbers</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

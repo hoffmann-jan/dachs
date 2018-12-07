@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="classdachs_xll_1_1_global" kind="class" language="C#" prot="public">
+    <compoundname>dachsXll::Global</compoundname>
+      <sectiondef kind="public-type">
+      <memberdef kind="enum" id="classdachs_xll_1_1_global_1aa09437ccfdeadcbae1b7cfa0a7d6676e" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>Languages</name>
+        <enumvalue id="classdachs_xll_1_1_global_1aa09437ccfdeadcbae1b7cfa0a7d6676ea78463a384a5aa4fad5fa73e2f506ecfc" prot="public">
+          <name>English</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+<para>English </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classdachs_xll_1_1_global_1aa09437ccfdeadcbae1b7cfa0a7d6676ea86bc3115eb4e9873ac96904a4a68e19e" prot="public">
+          <name>German</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+<para>German </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Available Languages. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Git/dachs/dachs/DachsXll/Global.cs" line="22" column="1" bodyfile="D:/Git/dachs/dachs/DachsXll/Global.cs" bodystart="21" bodyend="31"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="classdachs_xll_1_1_global_1a60b7fc96936f7bf45efcb65fc8e6dd6e" prot="private" static="yes" mutable="no">
+        <type>Languages</type>
+        <definition>Languages dachsXll.Global._Language</definition>
+        <argsstring></argsstring>
+        <name>_Language</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Git/dachs/dachs/DachsXll/Global.cs" line="8" column="1" bodyfile="D:/Git/dachs/dachs/DachsXll/Global.cs" bodystart="8" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="classdachs_xll_1_1_global_1a8ca0d0a333bba82f61da179319e9943c" prot="public" static="yes" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>Languages</type>
+        <definition>Languages dachsXll.Global.Language</definition>
+        <argsstring></argsstring>
+        <name>Language</name>
+        <briefdescription>
+<para>System language for localization. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Git/dachs/dachs/DachsXll/Global.cs" line="12" column="1" bodyfile="D:/Git/dachs/dachs/DachsXll/Global.cs" bodystart="13" bodyend="16"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Global static variables. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/Git/dachs/dachs/DachsXll/Global.cs" line="7" column="1" bodyfile="D:/Git/dachs/dachs/DachsXll/Global.cs" bodystart="6" bodyend="32"/>
+    <listofallmembers>
+      <member refid="classdachs_xll_1_1_global_1a60b7fc96936f7bf45efcb65fc8e6dd6e" prot="private" virt="non-virtual"><scope>dachsXll::Global</scope><name>_Language</name></member>
+      <member refid="classdachs_xll_1_1_global_1a8ca0d0a333bba82f61da179319e9943c" prot="public" virt="non-virtual"><scope>dachsXll::Global</scope><name>Language</name></member>
+      <member refid="classdachs_xll_1_1_global_1aa09437ccfdeadcbae1b7cfa0a7d6676e" prot="public" virt="non-virtual"><scope>dachsXll::Global</scope><name>Languages</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

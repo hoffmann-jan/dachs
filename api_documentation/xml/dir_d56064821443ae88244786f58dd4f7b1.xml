@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="dir_d56064821443ae88244786f58dd4f7b1" kind="dir">
+    <compoundname>D:/Git/dachs/dachs</compoundname>
+    <innerdir refid="dir_c1d6c310ad94c9543e4ca2d5b66c1481">D:/Git/dachs/dachs/dachs</innerdir>
+    <innerdir refid="dir_f7d55bca915ddbb0251603c1740f0530">D:/Git/dachs/dachs/DachsXll</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/Git/dachs/dachs/"/>
+  </compounddef>
+</doxygen>

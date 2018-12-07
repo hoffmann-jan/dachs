@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="dir_f7d55bca915ddbb0251603c1740f0530" kind="dir">
+    <compoundname>D:/Git/dachs/dachs/DachsXll</compoundname>
+    <innerdir refid="dir_593b3cb2dbb016163051fd8385c9a05f">D:/Git/dachs/dachs/DachsXll/Generators</innerdir>
+    <innerdir refid="dir_122da6531768c0a15214efcd0ccc3260">D:/Git/dachs/dachs/DachsXll/Interfaces</innerdir>
+    <innerdir refid="dir_eda59349a28fda8607b62edeb9b59dde">D:/Git/dachs/dachs/DachsXll/obj</innerdir>
+    <innerdir refid="dir_3267e67e189d4267110a8e65725a9343">D:/Git/dachs/dachs/DachsXll/Parser</innerdir>
+    <innerdir refid="dir_753c8434a012ac0d83fffa9f8aa98769">D:/Git/dachs/dachs/DachsXll/Properties</innerdir>
+    <innerfile refid="_excel_function_8cs">ExcelFunction.cs</innerfile>
+    <innerfile refid="_extractor_8cs">Extractor.cs</innerfile>
+    <innerfile refid="_global_8cs">Global.cs</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/Git/dachs/dachs/DachsXll/"/>
+  </compounddef>
+</doxygen>

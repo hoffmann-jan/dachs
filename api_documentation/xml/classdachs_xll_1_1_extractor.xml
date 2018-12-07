@@ -1,0 +1,555 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="classdachs_xll_1_1_extractor" kind="class" language="C#" prot="public">
+    <compoundname>dachsXll::Extractor</compoundname>
+    <basecompoundref refid="interfacedachs_xll_1_1_interfaces_1_1_i_extractor" prot="public" virt="non-virtual">dachsXll.Interfaces.IExtractor</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classdachs_xll_1_1_extractor_1a10780456f8a3341e5383485e852f318c" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string dachsXll.Extractor._Url</definition>
+        <argsstring></argsstring>
+        <name>_Url</name>
+        <initializer>= @&quot;https://adressen.leipzig.de&quot;</initializer>
+        <briefdescription>
+<para>The URL. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Git/dachs/dachs/DachsXll/Extractor.cs" line="22" column="1" bodyfile="D:/Git/dachs/dachs/DachsXll/Extractor.cs" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classdachs_xll_1_1_extractor_1a8f58a2d217c12a12dc5b7f98213b6b53" prot="private" static="no" mutable="no">
+        <type>const string</type>
+        <definition>const string dachsXll.Extractor._PatternOptionsValues</definition>
+        <argsstring></argsstring>
+        <name>_PatternOptionsValues</name>
+        <initializer>= &quot;(option value)([=\\\&quot; &gt;])+([\\d]+\\w*)&quot;</initializer>
+        <briefdescription>
+<para>Pattern </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Git/dachs/dachs/DachsXll/Extractor.cs" line="27" column="1" bodyfile="D:/Git/dachs/dachs/DachsXll/Extractor.cs" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classdachs_xll_1_1_extractor_1a61136543636d0233af329bf52fbe1141" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string dachsXll.Extractor.__EVENTVALIDATION</definition>
+        <argsstring></argsstring>
+        <name>__EVENTVALIDATION</name>
+        <briefdescription>
+<para>Parameter für die Abfrage. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Git/dachs/dachs/DachsXll/Extractor.cs" line="32" column="1" bodyfile="D:/Git/dachs/dachs/DachsXll/Extractor.cs" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classdachs_xll_1_1_extractor_1afc5cce940bde6ef31580f111ce3b301f" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string dachsXll.Extractor.__VIEWSTATE</definition>
+        <argsstring></argsstring>
+        <name>__VIEWSTATE</name>
+        <briefdescription>
+<para>Parameter für die Abfrage. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Git/dachs/dachs/DachsXll/Extractor.cs" line="36" column="1" bodyfile="D:/Git/dachs/dachs/DachsXll/Extractor.cs" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classdachs_xll_1_1_extractor_1afeaf89048fc81eeb3ca9292f1fa860d4" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string dachsXll.Extractor.__VIEWSTATEGENERATOR</definition>
+        <argsstring></argsstring>
+        <name>__VIEWSTATEGENERATOR</name>
+        <briefdescription>
+<para>Parameter für die Abfrage. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Git/dachs/dachs/DachsXll/Extractor.cs" line="40" column="1" bodyfile="D:/Git/dachs/dachs/DachsXll/Extractor.cs" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classdachs_xll_1_1_extractor_1a9a01d86d7c24d49df054b84f98e5b518" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string dachsXll.Extractor.btnFindStreet</definition>
+        <argsstring></argsstring>
+        <name>btnFindStreet</name>
+        <briefdescription>
+<para>Parameter für die Abfrage. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Git/dachs/dachs/DachsXll/Extractor.cs" line="44" column="1" bodyfile="D:/Git/dachs/dachs/DachsXll/Extractor.cs" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classdachs_xll_1_1_extractor_1ab048f4fec8aace228943294f5fe00d6a" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string dachsXll.Extractor.txtHnr</definition>
+        <argsstring></argsstring>
+        <name>txtHnr</name>
+        <briefdescription>
+<para>Hausnummer. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Git/dachs/dachs/DachsXll/Extractor.cs" line="48" column="1" bodyfile="D:/Git/dachs/dachs/DachsXll/Extractor.cs" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classdachs_xll_1_1_extractor_1a16680526ebb7aa2b0338f3fef3d77047" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string dachsXll.Extractor.txtStreet</definition>
+        <argsstring></argsstring>
+        <name>txtStreet</name>
+        <briefdescription>
+<para>Straßenname. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Git/dachs/dachs/DachsXll/Extractor.cs" line="52" column="1" bodyfile="D:/Git/dachs/dachs/DachsXll/Extractor.cs" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classdachs_xll_1_1_extractor_1a2a95aa0fd0cbde3778df43a0a93ca3c4" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool dachsXll.Extractor._HasError</definition>
+        <argsstring></argsstring>
+        <name>_HasError</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+<para>The has error. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Git/dachs/dachs/DachsXll/Extractor.cs" line="57" column="1" bodyfile="D:/Git/dachs/dachs/DachsXll/Extractor.cs" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classdachs_xll_1_1_extractor_1ab9c7011ac0b7d63812f72e7914283f07" prot="private" static="no" mutable="no">
+        <type><ref refid="classdachs_xll_1_1_extractor_1abfc7cf7a6eccbf16d344cef3eae4ac3c" kindref="member">Exception</ref></type>
+        <definition>Exception dachsXll.Extractor._Exception</definition>
+        <argsstring></argsstring>
+        <name>_Exception</name>
+        <initializer>= null</initializer>
+        <briefdescription>
+<para>The exception. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Git/dachs/dachs/DachsXll/Extractor.cs" line="61" column="1" bodyfile="D:/Git/dachs/dachs/DachsXll/Extractor.cs" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="classdachs_xll_1_1_extractor_1a42b18c18b34111b5b4c60c8def8e29c9" prot="private" static="yes" mutable="no">
+        <type>readonly HttpClient</type>
+        <definition>readonly HttpClient dachsXll.Extractor.client</definition>
+        <argsstring></argsstring>
+        <name>client</name>
+        <initializer>= new HttpClient()</initializer>
+        <briefdescription>
+<para>Http Client. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Git/dachs/dachs/DachsXll/Extractor.cs" line="66" column="1" bodyfile="D:/Git/dachs/dachs/DachsXll/Extractor.cs" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="classdachs_xll_1_1_extractor_1a3e8a19a2d985bf0fae87755ef7b9299c" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="no" privatesettable="yes" protectedsettable="no">
+        <type>bool</type>
+        <definition>bool dachsXll.Extractor.HasError</definition>
+        <argsstring></argsstring>
+        <name>HasError</name>
+        <briefdescription>
+<para>Gets a value indicating whether this T:dachs.Extractor has error. </para>        </briefdescription>
+        <detaileddescription>
+<para><computeroutput>true</computeroutput> if has error; otherwise, <computeroutput>false</computeroutput>.</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Git/dachs/dachs/DachsXll/Extractor.cs" line="74" column="1" bodyfile="D:/Git/dachs/dachs/DachsXll/Extractor.cs" bodystart="75" bodyend="78"/>
+      </memberdef>
+      <memberdef kind="property" id="classdachs_xll_1_1_extractor_1abfc7cf7a6eccbf16d344cef3eae4ac3c" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="no" privatesettable="yes" protectedsettable="no">
+        <type>Exception</type>
+        <definition>Exception dachsXll.Extractor.Exception</definition>
+        <argsstring></argsstring>
+        <name>Exception</name>
+        <briefdescription>
+<para>Gets the exception. </para>        </briefdescription>
+        <detaileddescription>
+<para>The exception.</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Git/dachs/dachs/DachsXll/Extractor.cs" line="83" column="1" bodyfile="D:/Git/dachs/dachs/DachsXll/Extractor.cs" bodystart="84" bodyend="92"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classdachs_xll_1_1_extractor_1a92434ef5c5b6853969f5fcc28c158933" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>dachsXll.Extractor.Extractor</definition>
+        <argsstring>()</argsstring>
+        <name>Extractor</name>
+        <briefdescription>
+<para>Initializes a new instance of the T:dachs.Extractor class. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Git/dachs/dachs/DachsXll/Extractor.cs" line="99" column="1" bodyfile="D:/Git/dachs/dachs/DachsXll/Extractor.cs" bodystart="99" bodyend="102"/>
+      </memberdef>
+      <memberdef kind="function" id="classdachs_xll_1_1_extractor_1ae4769bb12512d14df99d8df04fbf0123" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>dachsXll.Extractor.Extractor</definition>
+        <argsstring>(string url)</argsstring>
+        <name>Extractor</name>
+        <param>
+          <type>string</type>
+          <declname>url</declname>
+        </param>
+        <briefdescription>
+<para>Initializes a new instance of the T:dachs.Extractor class. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>url</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>URL.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Git/dachs/dachs/DachsXll/Extractor.cs" line="108" column="1" bodyfile="D:/Git/dachs/dachs/DachsXll/Extractor.cs" bodystart="108" bodyend="113"/>
+      </memberdef>
+      <memberdef kind="function" id="classdachs_xll_1_1_extractor_1afa3d3b39d04fcc23f98c89ca39ee8f58" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>IEnumerable&lt; string &gt;</type>
+        <definition>IEnumerable&lt;string&gt; dachsXll.Extractor.ExtractAllStreets</definition>
+        <argsstring>()</argsstring>
+        <name>ExtractAllStreets</name>
+        <reimplements refid="interfacedachs_xll_1_1_interfaces_1_1_i_extractor_1a9da26600ecb071a7439f7c042005ba7f">ExtractAllStreets</reimplements>
+        <briefdescription>
+<para>Get all available streets of Le. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>All available streets.</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Git/dachs/dachs/DachsXll/Extractor.cs" line="235" column="1" bodyfile="D:/Git/dachs/dachs/DachsXll/Extractor.cs" bodystart="235" bodyend="274"/>
+      </memberdef>
+      <memberdef kind="function" id="classdachs_xll_1_1_extractor_1a0d3f0af6cf541acb4c0631aea1f73b57" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>Stream</type>
+        <definition>Stream dachsXll.Extractor.Post</definition>
+        <argsstring>(string uri, Dictionary&lt; string, string &gt; values)</argsstring>
+        <name>Post</name>
+        <param>
+          <type>string</type>
+          <declname>uri</declname>
+        </param>
+        <param>
+          <type>Dictionary&lt; string, string &gt;</type>
+          <declname>values</declname>
+        </param>
+        <briefdescription>
+<para>Abfrage vom Server. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>uri</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>URL.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>values</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Parameter.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Webseite als String.</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Git/dachs/dachs/DachsXll/Extractor.cs" line="325" column="1" bodyfile="D:/Git/dachs/dachs/DachsXll/Extractor.cs" bodystart="325" bodyend="332"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classdachs_xll_1_1_extractor_1a6b35637d2deacc23202f4613e675feb4" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>IEnumerable&lt; string &gt; IExtractor.</type>
+        <definition>IEnumerable&lt;string&gt; IExtractor. dachsXll.Extractor.Extract</definition>
+        <argsstring>(string streetOfLe)</argsstring>
+        <name>Extract</name>
+        <reimplements refid="interfacedachs_xll_1_1_interfaces_1_1_i_extractor_1a1002eabad562702262809202461afac9">Extract</reimplements>
+        <param>
+          <type>string</type>
+          <declname>streetOfLe</declname>
+        </param>
+        <briefdescription>
+<para>Extract the specified streetOfLe. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The extract.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>streetOfLe</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Street of le.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Git/dachs/dachs/DachsXll/Extractor.cs" line="117" column="1" bodyfile="D:/Git/dachs/dachs/DachsXll/Extractor.cs" bodystart="117" bodyend="121"/>
+      </memberdef>
+      <memberdef kind="function" id="classdachs_xll_1_1_extractor_1ac19895e5e2799ca2bdcb1e5dd9e3b973" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void dachsXll.Extractor.Init</definition>
+        <argsstring>()</argsstring>
+        <name>Init</name>
+        <briefdescription>
+<para>Init this instance. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Git/dachs/dachs/DachsXll/Extractor.cs" line="127" column="1" bodyfile="D:/Git/dachs/dachs/DachsXll/Extractor.cs" bodystart="127" bodyend="131"/>
+      </memberdef>
+      <memberdef kind="function" id="classdachs_xll_1_1_extractor_1af8acd36c8e95ad9c0165f6c88507e97e" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool dachsXll.Extractor.TrySetVariables</definition>
+        <argsstring>(HtmlDocument htmlDocument)</argsstring>
+        <name>TrySetVariables</name>
+        <param>
+          <type>HtmlDocument</type>
+          <declname>htmlDocument</declname>
+        </param>
+        <briefdescription>
+<para>Tries the set variables. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>htmlDocument</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>HTML-Document</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><computeroutput>true</computeroutput>, if set variables was tryed, <computeroutput>false</computeroutput> otherwise.</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Git/dachs/dachs/DachsXll/Extractor.cs" line="138" column="1" bodyfile="D:/Git/dachs/dachs/DachsXll/Extractor.cs" bodystart="138" bodyend="177"/>
+      </memberdef>
+      <memberdef kind="function" id="classdachs_xll_1_1_extractor_1a537e6830229bd655ae9940b4d0bf4dec" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool dachsXll.Extractor.TrySetVariables</definition>
+        <argsstring>()</argsstring>
+        <name>TrySetVariables</name>
+        <briefdescription>
+<para>Tries the set variables. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para><computeroutput>true</computeroutput>, if set variables was tryed, <computeroutput>false</computeroutput> otherwise.</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Git/dachs/dachs/DachsXll/Extractor.cs" line="183" column="1" bodyfile="D:/Git/dachs/dachs/DachsXll/Extractor.cs" bodystart="183" bodyend="186"/>
+      </memberdef>
+      <memberdef kind="function" id="classdachs_xll_1_1_extractor_1a79ead8fbbcc38c192ed7f8bc0b3d5654" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>IEnumerable&lt; string &gt;</type>
+        <definition>IEnumerable&lt;string&gt; dachsXll.Extractor.GetAllNumbers</definition>
+        <argsstring>()</argsstring>
+        <name>GetAllNumbers</name>
+        <briefdescription>
+<para>Hollt alle Hausnummern der Straße. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Liste aller Hausnummern.</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Git/dachs/dachs/DachsXll/Extractor.cs" line="192" column="1" bodyfile="D:/Git/dachs/dachs/DachsXll/Extractor.cs" bodystart="192" bodyend="229"/>
+      </memberdef>
+      <memberdef kind="function" id="classdachs_xll_1_1_extractor_1aa90a220278e1cee14c21b0fc062cfa9d" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void dachsXll.Extractor.MakeStreetnameHumanReadable</definition>
+        <argsstring>(ref string value)</argsstring>
+        <name>MakeStreetnameHumanReadable</name>
+        <param>
+          <type>ref string</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Converts html symbols to readable charakters. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>input string with html symbols.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Git/dachs/dachs/DachsXll/Extractor.cs" line="280" column="1" bodyfile="D:/Git/dachs/dachs/DachsXll/Extractor.cs" bodystart="280" bodyend="315"/>
+      </memberdef>
+      <memberdef kind="function" id="classdachs_xll_1_1_extractor_1a7aaa58abc59ccf8d416942c15de43548" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool dachsXll.Extractor.TryGetMatchResult</definition>
+        <argsstring>(string pattern, string input, out MatchCollection matches)</argsstring>
+        <name>TryGetMatchResult</name>
+        <param>
+          <type>string</type>
+          <declname>pattern</declname>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>input</declname>
+        </param>
+        <param>
+          <type>out MatchCollection</type>
+          <declname>matches</declname>
+        </param>
+        <briefdescription>
+<para>Tries the get match result. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para><computeroutput>true</computeroutput>, if get match result was tryed, <computeroutput>false</computeroutput> otherwise.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pattern</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pattern.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>input</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Input.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>matches</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Match.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Git/dachs/dachs/DachsXll/Extractor.cs" line="342" column="1" bodyfile="D:/Git/dachs/dachs/DachsXll/Extractor.cs" bodystart="342" bodyend="356"/>
+      </memberdef>
+      <memberdef kind="function" id="classdachs_xll_1_1_extractor_1acbe63f294c9e0be6f305833890d62fa4" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void dachsXll.Extractor.ReplaceSpaceChar</definition>
+        <argsstring>(ref string value)</argsstring>
+        <name>ReplaceSpaceChar</name>
+        <param>
+          <type>ref string</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Replaces the space char. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Value.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Git/dachs/dachs/DachsXll/Extractor.cs" line="362" column="1" bodyfile="D:/Git/dachs/dachs/DachsXll/Extractor.cs" bodystart="362" bodyend="365"/>
+      </memberdef>
+      <memberdef kind="function" id="classdachs_xll_1_1_extractor_1af392d45fa48c82881322d030338371e0" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void dachsXll.Extractor.VadilateResponse</definition>
+        <argsstring>(ref HtmlDocument document)</argsstring>
+        <name>VadilateResponse</name>
+        <param>
+          <type>ref HtmlDocument</type>
+          <declname>document</declname>
+        </param>
+        <briefdescription>
+<para>Vadilates the HTML Response. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>document</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Git/dachs/dachs/DachsXll/Extractor.cs" line="371" column="1" bodyfile="D:/Git/dachs/dachs/DachsXll/Extractor.cs" bodystart="371" bodyend="411"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para><ref refid="classdachs_xll_1_1_extractor" kindref="compound">Extractor</ref>. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="14">
+        <label>dachsXll.Extractor</label>
+        <link refid="classdachs_xll_1_1_extractor"/>
+        <childnode refid="15" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>IExtractor</label>
+        <link refid="interfacedachs_xll_1_1_interfaces_1_1_i_extractor"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="16">
+        <label>dachsXll.Extractor</label>
+        <link refid="classdachs_xll_1_1_extractor"/>
+        <childnode refid="17" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>IExtractor</label>
+        <link refid="interfacedachs_xll_1_1_interfaces_1_1_i_extractor"/>
+      </node>
+    </collaborationgraph>
+    <location file="D:/Git/dachs/dachs/DachsXll/Extractor.cs" line="17" column="1" bodyfile="D:/Git/dachs/dachs/DachsXll/Extractor.cs" bodystart="16" bodyend="412"/>
+    <listofallmembers>
+      <member refid="classdachs_xll_1_1_extractor_1a61136543636d0233af329bf52fbe1141" prot="private" virt="non-virtual"><scope>dachsXll::Extractor</scope><name>__EVENTVALIDATION</name></member>
+      <member refid="classdachs_xll_1_1_extractor_1afc5cce940bde6ef31580f111ce3b301f" prot="private" virt="non-virtual"><scope>dachsXll::Extractor</scope><name>__VIEWSTATE</name></member>
+      <member refid="classdachs_xll_1_1_extractor_1afeaf89048fc81eeb3ca9292f1fa860d4" prot="private" virt="non-virtual"><scope>dachsXll::Extractor</scope><name>__VIEWSTATEGENERATOR</name></member>
+      <member refid="classdachs_xll_1_1_extractor_1ab9c7011ac0b7d63812f72e7914283f07" prot="private" virt="non-virtual"><scope>dachsXll::Extractor</scope><name>_Exception</name></member>
+      <member refid="classdachs_xll_1_1_extractor_1a2a95aa0fd0cbde3778df43a0a93ca3c4" prot="private" virt="non-virtual"><scope>dachsXll::Extractor</scope><name>_HasError</name></member>
+      <member refid="classdachs_xll_1_1_extractor_1a8f58a2d217c12a12dc5b7f98213b6b53" prot="private" virt="non-virtual"><scope>dachsXll::Extractor</scope><name>_PatternOptionsValues</name></member>
+      <member refid="classdachs_xll_1_1_extractor_1a10780456f8a3341e5383485e852f318c" prot="private" virt="non-virtual"><scope>dachsXll::Extractor</scope><name>_Url</name></member>
+      <member refid="classdachs_xll_1_1_extractor_1a9a01d86d7c24d49df054b84f98e5b518" prot="private" virt="non-virtual"><scope>dachsXll::Extractor</scope><name>btnFindStreet</name></member>
+      <member refid="classdachs_xll_1_1_extractor_1a42b18c18b34111b5b4c60c8def8e29c9" prot="private" virt="non-virtual"><scope>dachsXll::Extractor</scope><name>client</name></member>
+      <member refid="classdachs_xll_1_1_extractor_1abfc7cf7a6eccbf16d344cef3eae4ac3c" prot="public" virt="non-virtual"><scope>dachsXll::Extractor</scope><name>Exception</name></member>
+      <member refid="classdachs_xll_1_1_extractor_1a6b35637d2deacc23202f4613e675feb4" prot="private" virt="non-virtual"><scope>dachsXll::Extractor</scope><name>Extract</name></member>
+      <member refid="classdachs_xll_1_1_extractor_1afa3d3b39d04fcc23f98c89ca39ee8f58" prot="public" virt="non-virtual"><scope>dachsXll::Extractor</scope><name>ExtractAllStreets</name></member>
+      <member refid="classdachs_xll_1_1_extractor_1a92434ef5c5b6853969f5fcc28c158933" prot="public" virt="non-virtual"><scope>dachsXll::Extractor</scope><name>Extractor</name></member>
+      <member refid="classdachs_xll_1_1_extractor_1ae4769bb12512d14df99d8df04fbf0123" prot="public" virt="non-virtual"><scope>dachsXll::Extractor</scope><name>Extractor</name></member>
+      <member refid="classdachs_xll_1_1_extractor_1a79ead8fbbcc38c192ed7f8bc0b3d5654" prot="private" virt="non-virtual"><scope>dachsXll::Extractor</scope><name>GetAllNumbers</name></member>
+      <member refid="classdachs_xll_1_1_extractor_1a3e8a19a2d985bf0fae87755ef7b9299c" prot="public" virt="non-virtual"><scope>dachsXll::Extractor</scope><name>HasError</name></member>
+      <member refid="classdachs_xll_1_1_extractor_1ac19895e5e2799ca2bdcb1e5dd9e3b973" prot="private" virt="non-virtual"><scope>dachsXll::Extractor</scope><name>Init</name></member>
+      <member refid="classdachs_xll_1_1_extractor_1aa90a220278e1cee14c21b0fc062cfa9d" prot="private" virt="non-virtual"><scope>dachsXll::Extractor</scope><name>MakeStreetnameHumanReadable</name></member>
+      <member refid="classdachs_xll_1_1_extractor_1a0d3f0af6cf541acb4c0631aea1f73b57" prot="public" virt="non-virtual"><scope>dachsXll::Extractor</scope><name>Post</name></member>
+      <member refid="classdachs_xll_1_1_extractor_1acbe63f294c9e0be6f305833890d62fa4" prot="private" virt="non-virtual"><scope>dachsXll::Extractor</scope><name>ReplaceSpaceChar</name></member>
+      <member refid="classdachs_xll_1_1_extractor_1a7aaa58abc59ccf8d416942c15de43548" prot="private" virt="non-virtual"><scope>dachsXll::Extractor</scope><name>TryGetMatchResult</name></member>
+      <member refid="classdachs_xll_1_1_extractor_1af8acd36c8e95ad9c0165f6c88507e97e" prot="private" virt="non-virtual"><scope>dachsXll::Extractor</scope><name>TrySetVariables</name></member>
+      <member refid="classdachs_xll_1_1_extractor_1a537e6830229bd655ae9940b4d0bf4dec" prot="private" virt="non-virtual"><scope>dachsXll::Extractor</scope><name>TrySetVariables</name></member>
+      <member refid="classdachs_xll_1_1_extractor_1ab048f4fec8aace228943294f5fe00d6a" prot="private" virt="non-virtual"><scope>dachsXll::Extractor</scope><name>txtHnr</name></member>
+      <member refid="classdachs_xll_1_1_extractor_1a16680526ebb7aa2b0338f3fef3d77047" prot="private" virt="non-virtual"><scope>dachsXll::Extractor</scope><name>txtStreet</name></member>
+      <member refid="classdachs_xll_1_1_extractor_1af392d45fa48c82881322d030338371e0" prot="private" virt="non-virtual"><scope>dachsXll::Extractor</scope><name>VadilateResponse</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
