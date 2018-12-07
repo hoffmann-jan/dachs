@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Configuration;
 using System.IO;
 using System.Linq;
 
@@ -14,7 +16,7 @@ namespace dachsXll.Generators
     public class ExcelGenerator : IFileGenerator
     {
         #region Fields
-        private string _Path;
+        private readonly string _Path;
         private string _StreetName;
         #endregion
 
@@ -108,62 +110,69 @@ namespace dachsXll.Generators
         /// <param name="streetsNumbers">Key:street;Value:Numbers</param>
         void IFileGenerator.Generate(Dictionary<string, string> streetsNumbers)
         {
-            ExcelPackage package = new ExcelPackage();
-
-            if (streetsNumbers.Count == 1)
-                _StreetName = streetsNumbers.Keys.First();
-
-            if (Global.Language == Global.Languages.English)
+            try
             {
-                package.Workbook.Properties.Title = "Street of Le";
-                package.Workbook.Properties.Author = "dachs";
-                package.Workbook.Properties.Subject = _StreetName;
-                package.Workbook.Properties.Keywords = "Leipzig,streets,housenumbers";
-            }
-            else if (Global.Language == Global.Languages.German)
-            {
-                package.Workbook.Properties.Title = "Straßen von Leipzig";
-                package.Workbook.Properties.Author = "dachs";
-                package.Workbook.Properties.Subject = _StreetName;
-                package.Workbook.Properties.Keywords = "Leipzig,Straßenname,Hausnummern";
-            }
+                ExcelPackage package = new ExcelPackage();
 
+                if (streetsNumbers.Count == 1)
+                    _StreetName = streetsNumbers.Keys.First();
 
-
-            var worksheet = package.Workbook.Worksheets.Add(_StreetName);
-
-            //First add the headers
-            if (Global.Language == Global.Languages.English)
-            {
-                worksheet.Cells[1, 1].Value = "street name";
-                worksheet.Cells[1, 2].Value = "house numbers";
-            }
-            else if (Global.Language == Global.Languages.German)
-            {
-                worksheet.Cells[1, 1].Value = "Straßenname";
-                worksheet.Cells[1, 2].Value = "Hausnummern";
-            }
-
-            bool first = true;
-            int index = 2;
-            
-            foreach (KeyValuePair<string, string> keyValuePair in streetsNumbers)
-            {
-                if (first)
+                if (Global.Language == Global.Languages.English)
                 {
-                    worksheet.Cells[index, 1].Value = keyValuePair.Key;
-                    worksheet.Cells[index, 2].Value = keyValuePair.Value;
-                    first = false;
+                    package.Workbook.Properties.Title = "Street of Le";
+                    package.Workbook.Properties.Author = "dachs";
+                    package.Workbook.Properties.Subject = _StreetName;
+                    package.Workbook.Properties.Keywords = "Leipzig,streets,housenumbers";
                 }
-                else
+                else if (Global.Language == Global.Languages.German)
                 {
-                    worksheet.Cells[index, 2].Value = keyValuePair.Value;
+                    package.Workbook.Properties.Title = "Straßen von Leipzig";
+                    package.Workbook.Properties.Author = "dachs";
+                    package.Workbook.Properties.Subject = _StreetName;
+                    package.Workbook.Properties.Keywords = "Leipzig,Straßenname,Hausnummern";
                 }
 
-                index++;
-            }
 
-            SaveToFile(package, _StreetName);
+
+                var worksheet = package.Workbook.Worksheets.Add(_StreetName);
+
+                //First add the headers
+                if (Global.Language == Global.Languages.English)
+                {
+                    worksheet.Cells[1, 1].Value = "street name";
+                    worksheet.Cells[1, 2].Value = "house numbers";
+                }
+                else if (Global.Language == Global.Languages.German)
+                {
+                    worksheet.Cells[1, 1].Value = "Straßenname";
+                    worksheet.Cells[1, 2].Value = "Hausnummern";
+                }
+
+                bool first = true;
+                int index = 2;
+
+                foreach (KeyValuePair<string, string> keyValuePair in streetsNumbers)
+                {
+                    if (first)
+                    {
+                        worksheet.Cells[index, 1].Value = keyValuePair.Key;
+                        worksheet.Cells[index, 2].Value = keyValuePair.Value;
+                        first = false;
+                    }
+                    else
+                    {
+                        worksheet.Cells[index, 2].Value = keyValuePair.Value;
+                    }
+
+                    index++;
+                }
+
+                SaveToFile(package, _StreetName);
+            }
+            catch (Exception exception)
+            {
+                Console.Error.WriteLine(exception.Message);
+            }
         }
 
         #endregion

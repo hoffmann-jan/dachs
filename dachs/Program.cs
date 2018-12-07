@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Text;
+
 using dachsXll;
 using dachsXll.Generators;
 using dachsXll.Interfaces;
@@ -38,6 +39,8 @@ namespace dachs
         static void Main(string[] args)
         {
             Global.Language = Global.Languages.English;
+            Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
+
             if (args.Length == 0)
             {
                 while (true)
@@ -111,33 +114,31 @@ namespace dachs
                 Console.WriteLine("q - Beenden");
             }
 
-            bool exit = false;
             ConsoleKeyInfo keyInfo = Console.ReadKey();
             switch (keyInfo.Key)
             {
                 case ConsoleKey.Q:
                 case ConsoleKey.Escape:
-                    exit = true;
-                    break;
+                    return true;                    
                 case ConsoleKey.D1:
                 case ConsoleKey.NumPad1:
-                    exit = GetAllNumbersOfAStreet();
+                    GetAllNumbersOfAStreet();
                     break;
                 case ConsoleKey.D3:
                 case ConsoleKey.NumPad3:
-                    exit = GetAllNumbersOfAStreet(false, true);
+                    GetAllNumbersOfAStreet(false, true);
                     break;
                 case ConsoleKey.D4:
                 case ConsoleKey.NumPad4:
-                    exit = GetAll(false);
+                    GetAll(false);
                     break;
                 case ConsoleKey.D6:
                 case ConsoleKey.NumPad6:
-                    exit = GetAllNumbersOfAStreet(true, false);
+                    GetAllNumbersOfAStreet(true, false);
                     break;
                 case ConsoleKey.D7:
                 case ConsoleKey.NumPad7:
-                    exit = GetAll(true);
+                    GetAll(true);
                     break;
                 case ConsoleKey.G:
                     Global.Language = Global.Languages.German;
@@ -146,10 +147,9 @@ namespace dachs
                     Global.Language = Global.Languages.English;
                     break;
                 default:
-                    exit = false;
                     break;
             }
-            return exit;
+            return false;
         }
 
         static bool GetAllNumbersOfAStreet(bool toExcel = false, bool toCSV = false)
@@ -211,17 +211,18 @@ namespace dachs
                 if (Global.Language == Global.Languages.English)
                 {
                     Console.Write($", done.{Environment.NewLine}");
-                    Console.WriteLine($"Path: {Environment.CurrentDirectory}{Path.VolumeSeparatorChar}dachs{fileExtension}");
+                    Console.WriteLine($"Path: {Environment.CurrentDirectory}{Path.VolumeSeparatorChar}{street}{fileExtension}");
                     Console.WriteLine("press any key to continue ..");
+                    Console.ReadKey();
                 }
                 else if (Global.Language == Global.Languages.German)
                 {
                     Console.Write($", abgeschlossen.{Environment.NewLine}");
-                    Console.WriteLine($"Pfad: {Environment.CurrentDirectory}{Path.VolumeSeparatorChar}dachs{fileExtension}");
+                    Console.WriteLine($"Pfad: {Environment.CurrentDirectory}{Path.VolumeSeparatorChar}{street}{fileExtension}");
                     Console.WriteLine("Drücke eine Taste zum Fortfahren ..");
+                    Console.ReadKey();
                 }
             }
-            Console.ReadKey();
 
             return true;
         }
@@ -263,7 +264,7 @@ namespace dachs
             if (Global.Language == Global.Languages.English)
             {
                 Console.WriteLine($"number of known streets: {TotalNumbers}");
-                Console.WriteLine("processing.. please wait(~10 min)");
+                Console.WriteLine("processing.. please wait(~10-15 min)");
             }
             else if (Global.Language == Global.Languages.German)
             {
@@ -279,16 +280,14 @@ namespace dachs
             foreach (string name in streets)
             {
                 var extract = extractor.Extract(name);
-                bool first = true;
                 StringBuilder numbers = new StringBuilder();
 
                 foreach (var r in extract)
                 {
                     count++;
-                    if (first)
+                    if (numbers.Length == 0)
                     {
                         numbers.Append(r);
-                        first = false;
                     }
                     else
                         numbers.Append(string.Concat(",", r));
@@ -360,6 +359,7 @@ namespace dachs
         {
             try
             {
+                TotalNumbers = 0;
                 IExtractor extractor = new Extractor();                
                 IEnumerable<string> er = extractor.Extract(street);
                 bool first = true;
@@ -367,6 +367,7 @@ namespace dachs
 
                 foreach (var r in er)
                 {
+                    TotalNumbers++;
                     if (first)
                     {
                         result.Append(r);
@@ -404,6 +405,7 @@ namespace dachs
                 }
                 Console.WriteLine();
                 Console.WriteLine(numbers);
+                Console.WriteLine($"total: {TotalNumbers}");
 
                 Console.WriteLine();
                 Console.WriteLine("press any key to continue ..");
@@ -418,6 +420,7 @@ namespace dachs
                 }
                 Console.WriteLine();
                 Console.WriteLine(numbers);
+                Console.WriteLine($"Anzahl Hausnummern: {TotalNumbers}");
 
                 Console.WriteLine();
                 Console.WriteLine("Drücke eine Taste zum Fortfahren ..");
