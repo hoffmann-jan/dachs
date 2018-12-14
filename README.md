@@ -1,3 +1,5 @@
+![dachs Icon](badger.svg)
+
 # dachs
 > dynamic address components help system
 
