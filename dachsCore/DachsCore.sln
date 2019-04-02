@@ -1,0 +1,25 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DachsCore", "DachsCore.csproj", "{67CEF12A-0DA1-4790-87DA-47699F5DBE64}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{67CEF12A-0DA1-4790-87DA-47699F5DBE64}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67CEF12A-0DA1-4790-87DA-47699F5DBE64}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67CEF12A-0DA1-4790-87DA-47699F5DBE64}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67CEF12A-0DA1-4790-87DA-47699F5DBE64}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		Policies = $0
+		$0.DotNetNamingPolicy = $1
+		$1.DirectoryNamespaceAssociation = PrefixedHierarchical
+		$0.StandardHeader = $2
+		$2.Text = @\n/*\n*\n* ${CopyrightHolder}\n*\n* FileName: ${FileName}\n* Created on: ${Date}\n*/\n
+		version = 1.0
+	EndGlobalSection
+EndGlobal
